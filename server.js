@@ -4,6 +4,9 @@ const apiroutes = require("./Routes/apiroutes");
 const res = require("express/lib/response");
 const port = 3001;
 const app = express();
+const fs = require("fs");
+const notes = require("./db/db.json");
+const myJSON = JSON.stringify(notes);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -11,13 +14,15 @@ app.use(express.static("public"));
 app.use("/", htmlroutes);
 app.use("/notes", apiroutes);
 
-app.post("", (req, response) => {
+app.get("/api/notes", (request, response) => {
+  res.sendFile(path.join(__dirname, "/db/db.json"));
+});
+
+app.post("/api/notes", (request, response) => {
   const notes = JSON.parse(fs.readFileSync("./db/db.json"));
-  const newNotes = request.body;
-  newNotes.id = uuid.v4();
-  notes.push(newNotes);
+  const newPost = request.body;
+  notes.push(newPost);
   fs.writeFileSync("./db/db.json", JSON.stringify(notes));
-  res.json(notes);
 });
 
 app.listen(port, () => {
