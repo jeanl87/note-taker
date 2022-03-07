@@ -21,4 +21,4 @@ ON the upper right hand side of the page would be where you would click the save
 
 Github: https://github.com/jeanl87/note-taker.git
 
-Web Link:
+Web Link: https://jeanl87-note-taker.herokuapp.com/
