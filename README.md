@@ -6,9 +6,9 @@
 A small busniess owner wants to be able to write and save notes
 THE note taker webpage would be use to keep traker and organize task that would need to be completed
 
-## Acceptance
-
 ```
+
+## Acceptance
 
 THE note taker application would be opened in the web browser
 WHEN you get to the main page you would click GET STARTED
@@ -22,3 +22,4 @@ ON the upper right hand side of the page would be where you would click the save
 Github: https://github.com/jeanl87/note-taker.git
 
 Web Link: https://jeanl87-note-taker.herokuapp.com/
+https://jeanl87.github.io/note-taker/
